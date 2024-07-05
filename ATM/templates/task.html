@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ATM</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Hello, {{ name }}</h1>
+        <p class="mt-3">How may I help you?</p>
+        <form method="POST" class="mt-3">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" id="balance" name="task" value="1">
+                <label class="form-check-label" for="balance">CHECK BALANCE</label><br>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" id="deposit" name="task" value="2">
+                <label class="form-check-label" for="deposit">DEPOSIT</label><br>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" id="withdraw" name="task" value="3">
+                <label class="form-check-label" for="withdraw">WITHDRAWAL</label><br>
+            </div>
+            <button type="submit" class="btn btn-primary mt-3">Submit</button>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
