@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance Premium Charges Prediction</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 0;
+            background-color: #0f0f0f;
+            color: #33ff33;
+            overflow-y: auto;
+        }
+        header {
+            background-color: #101010;
+            color: #33ff33;
+            padding: 1rem;
+            text-align: center;
+            border-bottom: 2px solid #33ff33;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: #101010;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 8px rgba(0, 255, 0, 0.2);
+        }
+        h1, h2 {
+            color: #33ff33;
+        }
+        .intro-section {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .intro-section p {
+            font-size: 1.125rem;
+            line-height: 1.75rem;
+        }
+        .cta-button,
+.cta-button::after {
+ padding: 16px 20px;
+ font-size: 18px;
+ background: linear-gradient(45deg, transparent 5%, #01ff23 5%);
+ border: 0;
+ color: #151212;
+ letter-spacing: 3px;
+ line-height: 1;
+ box-shadow: 6px 0px 0px #00e6f6;
+ outline: transparent;
+ position: relative;
+ text-decoration: none; /* Ensure the link doesn't have underline */
+}
+
+.cta-button::after {
+ --slice-0: inset(50% 50% 50% 50%);
+ --slice-1: inset(80% -6px 0 0);
+ --slice-2: inset(50% -6px 30% 0);
+ --slice-3: inset(10% -6px 85% 0);
+ --slice-4: inset(40% -6px 43% 0);
+ --slice-5: inset(80% -6px 5% 0);
+ content: "HOVER ME";
+ display: block;
+ position: absolute;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ background: linear-gradient(45deg, transparent 3%, #030303 3%, #0c1212 5%, #23ff01 5%);
+ text-shadow: -3px -3px 0px #05f85a, 3px 3px 0px #070808;
+ clip-path: var(--slice-0);
+}
+
+.cta-button:hover::after {
+ animation: 1s glitch;
+ animation-timing-function: steps(2, end);
+}
+
+@keyframes glitch {
+ 0% {
+  clip-path: var(--slice-1);
+  transform: translate(-20px, -10px);
+ }
+
+ 10% {
+  clip-path: var(--slice-3);
+  transform: translate(10px, 10px);
+ }
+
+ 20% {
+  clip-path: var(--slice-1);
+  transform: translate(-10px, 10px);
+ }
+
+ 30% {
+  clip-path: var(--slice-3);
+  transform: translate(0px, 5px);
+ }
+
+ 40% {
+  clip-path: var(--slice-2);
+  transform: translate(-5px, 0px);
+ }
+
+ 50% {
+  clip-path: var(--slice-3);
+  transform: translate(5px, 0px);
+ }
+
+ 60% {
+  clip-path: var(--slice-4);
+  transform: translate(5px, 10px);
+ }
+
+ 70% {
+  clip-path: var(--slice-2);
+  transform: translate(-10px, 10px);
+ }
+
+ 80% {
+  clip-path: var(--slice-5);
+  transform: translate(20px, -10px);
+ }
+
+ 90% {
+  clip-path: var(--slice-1);
+  transform: translate(-10px, 0px);
+ }
+
+ 100% {
+  clip-path: var(--slice-1);
+  transform: translate(0);
+ }
+}
+
+        .profile-section {
+            display: flex;
+            align-items: center;
+            margin: 2rem 0;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .profile-section img {
+            border-radius: 22%;
+            border: 3px solid #33ff33;
+            margin-right: 1.5rem;
+            padding: 5px;
+            background-color: #101010;
+            box-shadow: 0 0 10px #33ff33;
+        }
+        .profile-section div {
+            max-width: 70%;
+        }
+        .project-details {
+            background-color: #101010;
+            padding: 1rem;
+            border-radius: 0.375rem;
+        }
+        .project-details h2 {
+            color: #33ff33;
+        }
+        .project-details ul {
+            list-style: none;
+            padding: 0;
+        }
+        .project-details li {
+            color: #99ff99;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #101010;
+            color: #33ff33;
+            border-top: 2px solid #33ff33;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Insurance Premium Charges Prediction</h1>
+    </header>
+    <div class="container">
+        <div class="intro-section">
+            <h2>Welcome to the Insurance Prediction Project</h2>
+            <p>This project aims to predict insurance premiums based on various factors such as age, sex, BMI, number of children, smoking status, and region. The goal is to provide accurate and reliable predictions to help in understanding and managing insurance costs effectively.</p>
+            <a href="/project" class="cta-button">Go to Project</a>
+        </div>
+
+        <hr>
+
+        <div class="profile-section">
+            <img src=".\static\image\03.jpg" alt="Chetan Singh Chouhan" height="150">
+            <div>
+                <h2>Chetan Singh Chouhan</h2>
+                <p>Hi, I'm Chetan Singh Chouhan, a passionate developer working on machine learning and web development projects. I specialize in creating efficient models for data predictions and developing interactive web applications.</p>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="project-details">
+            <h2>Project Details</h2>
+            <p><strong>Data and Analysis:</strong></p>
+            <p><strong>Data Preparation:</strong> The dataset comprises variables such as age, sex, BMI, number of children, smoking status, region, and insurance charges. We apply data preprocessing techniques including one-hot encoding for categorical variables and normalization for numerical features.</p>
+            <p><strong>Feature Engineering:</strong> BMI is categorized into health classes (Underweight, Healthy Weight, Overweight, Obese) to analyze average charges across different health categories.</p>
+            <p><strong>Model Training:</strong></p>
+            <ul>
+                <li><strong>Linear Regression:</strong> Utilized to model linear relationships between input features and insurance charges.</li>
+                <li><strong>Decision Tree Regressor:</strong> Implemented to capture non-linear relationships and interactions among features.</li>
+                <li><strong>Random Forest Regressor:</strong> Deployed to enhance prediction accuracy through ensemble learning techniques.</li>
+            </ul>
+            <p><strong>Evaluation:</strong> Models are evaluated based on training and testing performance metrics to ensure accuracy and reliability. The most effective models are saved for future deployment.</p>
+            <p><strong>Visualization:</strong> A variety of visualizations, including heatmaps, bar charts, and pie charts, are created to depict the distribution of health categories and model performance.</p>
+            <p><strong>Outcome:</strong> This project offers a robust solution for predicting insurance premiums, aiding in the effective management of insurance costs. It provides valuable insights for customers and insurers, facilitating informed financial planning and decision-making.</p>
+            <p><strong>Technologies and Libraries:</strong></p>
+            <ul>
+                <li><strong>Flask:</strong> For developing the web application and managing server-side operations.</li>
+                <li><strong>Scikit-learn:</strong> For constructing and evaluating machine learning models.</li>
+                <li><strong>SQLite:</strong> For efficient data management and storage.</li>
+                <li><strong>HTML/CSS:</strong> For designing and styling the web interface.</li>
+                <li><strong>Numpy:</strong> For performing numerical computations and handling arrays.</li>
+                <li><strong>Pandas:</strong> For data manipulation and analysis.</li>
+                <li><strong>Matplotlib:</strong> For generating static, interactive, and animated visualizations.</li>
+            </ul>
+        </div>
+    </div>
+    <footer>
+        <p>© 2024 Insurance Premium Prediction. All rights reserved.</p>
+    </footer>
+</body>
+</html>

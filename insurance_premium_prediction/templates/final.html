@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Prediction</title>
+    <style>
+        body {
+            background-color: #000;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Courier New', Courier, monospace;
+            background: #000 url('https://www.toptal.com/designers/subtlepatterns/patterns/memphis-mini-dark.png') repeat;
+            color: #33ff33;
+        }
+        .container {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.9);
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 4px 8px rgba(0, 255, 0, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 255, 0, 0.3);
+            width: 100%;
+            max-width: 400px;
+            animation: fadeIn 2s ease-in-out;
+        }
+        h2 {
+            color: #33ff33;
+            margin-bottom: 1rem;
+        }
+        .output {
+            font-size: 2rem;
+            color: #33ff33;
+        }
+        .button-container {
+            margin-top: 1rem;
+        }
+        .button,
+.button::after,
+.cta-button,
+.cta-button::after {
+ padding: 16px 20px;
+ font-size: 18px;
+ background: linear-gradient(45deg, transparent 5%, #00ff00 5%); /* Green color */
+ border: 0;
+ color: #0d0e0d; /* Green color */
+ letter-spacing: 3px;
+ line-height: 1;
+ box-shadow: 6px 0px 0px #000; /* Black shadow */
+ outline: transparent;
+ position: relative;
+ text-decoration: none; /* Ensure the link doesn't have underline */
+}
+
+.button::after,
+.cta-button::after {
+ --slice-0: inset(50% 50% 50% 50%);
+ --slice-1: inset(80% -6px 0 0);
+ --slice-2: inset(50% -6px 30% 0);
+ --slice-3: inset(10% -6px 85% 0);
+ --slice-4: inset(40% -6px 43% 0);
+ --slice-5: inset(80% -6px 5% 0);
+ content: "HOVER ME";
+ display: block;
+ position: absolute;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ background: linear-gradient(45deg, transparent 3%, #000 3%, #000 5%, #00ff00 5%); /* Black and green */
+ text-shadow: -3px -3px 0px #00ff00, 3px 3px 0px #000; /* Green and black */
+ clip-path: var(--slice-0);
+}
+
+.button:hover::after,
+.cta-button:hover::after {
+ animation: 1s glitch;
+ animation-timing-function: steps(2, end);
+}
+
+@keyframes glitch {
+ 0% {
+  clip-path: var(--slice-1);
+  transform: translate(-20px, -10px);
+ }
+
+ 10% {
+  clip-path: var(--slice-3);
+  transform: translate(10px, 10px);
+ }
+
+ 20% {
+  clip-path: var(--slice-1);
+  transform: translate(-10px, 10px);
+ }
+
+ 30% {
+  clip-path: var(--slice-3);
+  transform: translate(0px, 5px);
+ }
+
+ 40% {
+  clip-path: var(--slice-2);
+  transform: translate(-5px, 0px);
+ }
+
+ 50% {
+  clip-path: var(--slice-3);
+  transform: translate(5px, 0px);
+ }
+
+ 60% {
+  clip-path: var(--slice-4);
+  transform: translate(5px, 10px);
+ }
+
+ 70% {
+  clip-path: var(--slice-2);
+  transform: translate(-10px, 10px);
+ }
+
+ 80% {
+  clip-path: var(--slice-5);
+  transform: translate(20px, -10px);
+ }
+
+ 90% {
+  clip-path: var(--slice-1);
+  transform: translate(-10px, 0px);
+ }
+
+ 100% {
+  clip-path: var(--slice-1);
+  transform: translate(0);
+ }
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Your Predicted Price is:</h2>
+        <div class="output">{{ output }}</div>
+        <div class="button-container">
+            <a href="/" class="button">Go Back</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance Prediction</title>
+    <style>
+        body {
+            background-color: #000;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Courier New', Courier, monospace;
+            background: #000 url('https://www.toptal.com/designers/subtlepatterns/patterns/memphis-mini-dark.png') repeat;
+            color: #33ff33;
+            cursor: url('https://www.example.com/path-to-your-cursor-image.png'), auto;
+        }
+        .container {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.9);
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 4px 8px rgba(0, 255, 0, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 255, 0, 0.3);
+            width: 100%;
+            max-width: 400px;
+            animation: fadeIn 2s ease-in-out;
+        }
+        h2 {
+            color: #33ff33;
+            margin-bottom: 1rem;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .input-group {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin: 0.5rem 0;
+            width: 100%;
+            max-width: 300px;
+            justify-content: space-between;
+        }
+        .input-group label {
+            flex: 1;
+            text-align: left;
+            color: #33ff33;
+        }
+        .input-group input, .input-group select {
+            flex: 2;
+            padding: 0.5rem;
+            border-radius: 5px;
+            border: 1px solid #33ff33;
+            background-color: #101010;
+            color: #33ff33;
+        }
+        .input-group input:focus, .input-group select:focus {
+            border-color: #33ff33;
+        }
+        button,
+button::after {
+ padding: 16px 20px;
+ font-size: 18px;
+ background: linear-gradient(45deg, transparent 5%, #01ff49 5%);
+ border: 0;
+ color: #080707;
+ letter-spacing: 3px;
+ line-height: 1;
+ box-shadow: 6px 0px 0px #00e6f6;
+ outline: transparent;
+ position: relative;
+}
+
+button::after {
+ --slice-0: inset(50% 50% 50% 50%);
+ --slice-1: inset(80% -6px 0 0);
+ --slice-2: inset(50% -6px 30% 0);
+ --slice-3: inset(10% -6px 85% 0);
+ --slice-4: inset(40% -6px 43% 0);
+ --slice-5: inset(80% -6px 5% 0);
+ content: "HOVER ME";
+ display: block;
+ position: absolute;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ background: linear-gradient(45deg, transparent 3%, #00e6f6 3%, #00e6f6 5%, #ff013c 5%);
+ text-shadow: -3px -3px 0px #f8f005, 3px 3px 0px #00e6f6;
+ clip-path: var(--slice-0);
+}
+
+button:hover::after {
+ animation: 1s glitch;
+ animation-timing-function: steps(2, end);
+}
+
+@keyframes glitch {
+ 0% {
+  clip-path: var(--slice-1);
+  transform: translate(-20px, -10px);
+ }
+
+ 10% {
+  clip-path: var(--slice-3);
+  transform: translate(10px, 10px);
+ }
+
+ 20% {
+  clip-path: var(--slice-1);
+  transform: translate(-10px, 10px);
+ }
+
+ 30% {
+  clip-path: var(--slice-3);
+  transform: translate(0px, 5px);
+ }
+
+ 40% {
+  clip-path: var(--slice-2);
+  transform: translate(-5px, 0px);
+ }
+
+ 50% {
+  clip-path: var(--slice-3);
+  transform: translate(5px, 0px);
+ }
+
+ 60% {
+  clip-path: var(--slice-4);
+  transform: translate(5px, 10px);
+ }
+
+ 70% {
+  clip-path: var(--slice-2);
+  transform: translate(-10px, 10px);
+ }
+
+ 80% {
+  clip-path: var(--slice-5);
+  transform: translate(20px, -10px);
+ }
+
+ 90% {
+  clip-path: var(--slice-1);
+  transform: translate(-10px, 0px);
+ }
+
+ 100% {
+  clip-path: var(--slice-1);
+  transform: translate(0);
+ }
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Get Insurance Premium Charges Prediction</h2>
+        <hr>
+        <form action="{{ url_for('predict') }}" method="post">
+            <div class="input-group">
+                <label for="region">Region:</label>
+                <select name="region" id="region">
+                    <option value="se">Southeast</option>
+                    <option value="sw">Southwest</option>
+                    <option value="ne">Northeast</option>
+                    <option value="nw">Northwest</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="children">Children:</label>
+                <select name="children" id="children">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="health">Health:</label>
+                <select name="health" id="health">
+                    <option value="1">Underweight</option>
+                    <option value="2">Healthy Weight</option>
+                    <option value="3">Overweight</option>
+                    <option value="4">Obese</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="smoker">Smoker:</label>
+                <select name="smoker" id="smoker">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="gender">Gender:</label>
+                <select name="gender" id="gender">
+                    <option value="0">Female</option>
+                    <option value="1">Male</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="bmi">BMI:</label>
+                <input type="text" name="bmi" id="bmi" required>
+            </div>
+
+            <div class="input-group">
+                <label for="age">Age:</label>
+                <input type="text" name="age" id="age" placeholder="Your age, please..." required>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
