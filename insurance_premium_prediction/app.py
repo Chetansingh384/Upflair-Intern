@@ -2,7 +2,7 @@
 from flask import Flask,render_template,url_for,request
 import joblib
 import sqlite3
-random_forest = joblib.load('./models/RF_model.joblib')  # loaded 
+random_forest = joblib.load('./models/RF_model.joblib')  #model loaded
 
 app = Flask(__name__)
 data_insert_query = """
